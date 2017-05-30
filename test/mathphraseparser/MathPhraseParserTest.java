@@ -10,7 +10,7 @@ public class MathPhraseParserTest {
 
 	@Test
 	public void testMathPhrase42() {
-		assertEquals(42.0, Double.parseDouble(new MathPhraseParser("2+40)").getResult()),0.0);
+		assertEquals(42.0, Double.parseDouble(new MathPhraseParser("4+38)").getResult()),0.0);
 	}
 	@Test
 	public void testMathPhraseParserBasic() {
