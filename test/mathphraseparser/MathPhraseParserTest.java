@@ -17,7 +17,7 @@ public class MathPhraseParserTest {
 		assertEquals(75.0, Double.parseDouble(new MathPhraseParser("5+(9+1)*7)").getResult()),0.0);
 	}
 	@Test
-	public void testMathPhraseParser() {
+	public void testMathPhraseParserTarget() {
 		assertEquals(120.1, Double.parseDouble(new MathPhraseParser("5! + abs(6-7*7) / ((9+1)*7)").getResult()),0.0);
 	}
 
