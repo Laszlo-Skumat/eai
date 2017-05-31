@@ -61,10 +61,13 @@ public class EAITestController implements ErrorController{
      * @param phrase
      * @return The result of the evaluation of the math phrase
      */
-    @RequestMapping(value="/person/get/{id}", method=RequestMethod.GET, produces="application/json")
+    @RequestMapping(value="/eval/{expression}", method=RequestMethod.GET)
     @ResponseBody
-    String home(@PathVariable("id") String id) {
-    	return "{\"result\": \"Ez az:"+id+"\"}";
+    String home(@PathVariable("expression") String phrase) {
+    	//TODO: call the parser
+    	//TODO: single line
+		String result = "\"Ez az:"+phrase+"\""; 
+        return result;
     }
 
     /**
