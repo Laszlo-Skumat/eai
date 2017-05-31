@@ -22,6 +22,9 @@ public class EAITestController implements ErrorController{
     private ErrorAttributes errorAttributes;
     private final static String ERROR_PATH = "/error";
 
+    /**
+     * Part of error handling, used from a tutorial
+     */
     private boolean getTraceParameter(HttpServletRequest request) {
         String parameter = request.getParameter("trace");
         if (parameter == null) {
@@ -57,20 +60,6 @@ public class EAITestController implements ErrorController{
     }
 
     /**
-     * Entry point
-     * @param phrase
-     * @return The result of the evaluation of the math phrase
-     */
-    @RequestMapping(value="/eval/{expression}", method=RequestMethod.GET)
-    @ResponseBody
-    String home(@PathVariable("expression") String phrase) {
-    	//TODO: call the parser
-    	//TODO: single line
-		String result = "\"Ez az:"+phrase+"\""; 
-        return result;
-    }
-
-    /**
      * Controller for the test web service
      * @param errorAttributes
      */
@@ -97,13 +86,16 @@ public class EAITestController implements ErrorController{
     }
     
     /**
-     * Application entry point
-     * TODO: move out from this class 
-     * @param args
-     * @throws Exception
+     * Entry point
+     * @param phrase
+     * @return The result of the evaluation of the math phrase
      */
-    public static void main(String[] args) throws Exception {
-    	SpringApplication.run(EAITestController.class, args);
+    @RequestMapping(value="/eval/{expression}", method=RequestMethod.GET)
+    @ResponseBody
+    String home(@PathVariable("expression") String phrase) {
+    	//TODO: call the parser
+    	//TODO: single line
+		String result = "\"Ez az:"+phrase+"\""; 
+        return result;
     }
-
 }
